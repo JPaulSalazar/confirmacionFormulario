@@ -28,7 +28,7 @@ const inputs = document.querySelectorAll(".requerido");
 const script = document.querySelector("script");
 const h3 = document.createElement('h3');
 const formParent = form.parentElement;
-const h1 = document.createElement('h1');
+const h2 = document.createElement('h2');
 let confirmText = '';
 let alerText = '';
 form.addEventListener("submit", function(e) {
@@ -38,15 +38,23 @@ form.addEventListener("submit", function(e) {
       element.style.border = '1px solid  black';
       alerText = '';
       confirmText = "Su formulario fue enviado";
+      h3.style.backgroundColor = 'rgb(78, 211, 106)';
+      h3.style.border = ' 2px solid green';
+      h2.style.backgroundColor = 'transparent';
+      h2.style.border = 'none';
     } else{
       element.style.border = '3px solid red';
       alerText = "Ocurrio un error, verifica los siguientes campos";
       confirmText = '';
+      h3.style.backgroundColor = 'transparent';
+      h3.style.border = 'none';
+      h2.style.backgroundColor = 'rgb(230, 105, 116)';
+      h2.style.border = ' 2px solid red';
     }
-  })
+  });
   h3.innerText = confirmText;
-  h1.innerText = alerText;
-  formParent.insertBefore(h1, form);
+  h2.innerText = alerText;
+  formParent.insertBefore(h2, form);
   formParent.insertBefore(h3, script);
   console.log("FORMULARIO ENVIADO");
 });
